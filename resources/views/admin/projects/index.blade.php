@@ -14,6 +14,8 @@
                     <th scope="col">Data di inizio</th>
                     <th scope="col">Data di fine</th>
                     <th scope="col"></th>
+                    <th scope="col"></th>
+
 
 
                 </tr>
@@ -26,6 +28,14 @@
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->end_date}}</td>
                     <td><a href="{{ route('admin.projects.show', ['project'=>$project->slug]) }}" class="btn btn-info">Dettagli</a></td>
+                    <td>
+                        <form action="{{route('admin.projects.destroy', ['project'=>$project->slug])}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Elimina</button>
+                        </form>
+                    </td>
+
 
                 </tr>
                 @endforeach
