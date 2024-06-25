@@ -35,6 +35,8 @@ class ProjectController extends Controller
         $data = $request->all();
         $project = new Project();
         $project->fill($data);
+
+        // Lo slug viene usato come un id ma è più user friendly, inserisce i trattini tra le parole, è utile per le pagine CEO friendly
         $project->slug = Str::slug($project->title);
         $project->save();
 
@@ -45,9 +47,11 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        //
+
+        // dd($project);
+        return view('admin.projects.show', compact('project'));
     }
 
     /**

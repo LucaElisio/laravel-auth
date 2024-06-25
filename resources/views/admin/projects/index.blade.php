@@ -13,6 +13,8 @@
                     <th scope="col">Descrizione</th>
                     <th scope="col">Data di inizio</th>
                     <th scope="col">Data di fine</th>
+                    <th scope="col"></th>
+
 
                 </tr>
             </thead>
@@ -23,6 +25,8 @@
                     <td>{{$project->content}}</td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->end_date}}</td>
+                    <td><a href="{{ route('admin.projects.show', ['project'=>$project->slug]) }}" class="btn btn-info">Dettagli</a></td>
+
                 </tr>
                 @endforeach
             </tbody>
