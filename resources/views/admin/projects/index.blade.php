@@ -6,6 +6,14 @@
             <h1>Lista progetti</h1>
             <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Crea un nuovo progetto</a>
         </div>
+
+        {{-- Messaggio di eliminazione --}}
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{session('message')}}
+            </div>
+        @endif
+
         <table class="table">
             <thead>
                 <tr>
