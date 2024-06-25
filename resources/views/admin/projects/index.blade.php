@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="container">
-        <h1>Lista progetti</h1>
+        <div class="container d-flex justify-content-between align-items-center my-4">
+            <h1>Lista progetti</h1>
+            <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Crea un nuovo progetto</a>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -10,6 +13,7 @@
                     <th scope="col">Descrizione</th>
                     <th scope="col">Data di inizio</th>
                     <th scope="col">Data di fine</th>
+
                 </tr>
             </thead>
             <tbody>
